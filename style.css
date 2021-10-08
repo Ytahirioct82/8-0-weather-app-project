@@ -1,0 +1,44 @@
+main {
+  text-align: center;
+  font-family: sans-serif;
+  margin: auto;
+}
+
+header {
+  border: 1px solid black;
+  background-color: rgb(37, 128, 128);
+  width: 600px;
+  margin: auto 190px;
+  height: 130px;
+}
+
+h1 {
+  color: white;
+}
+
+span {
+  color: white;
+  padding-bottom: 50%;
+}
+
+section.display {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(2, 400px);
+  margin: auto;
+  width: 65%;
+  padding: 10px;
+}
+
+div.view-weather {
+  padding-top: 5px;
+  background-color: rgb(239, 239, 239);
+  margin-top: 10px;
+  width: 400px;
+  border: 3px solid rgb(83, 160, 160);
+}
+
+aside {
+  width: 50%;
+  margin-left: 10px;
+}
