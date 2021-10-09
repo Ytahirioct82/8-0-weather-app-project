@@ -2,6 +2,7 @@ main {
   text-align: center;
   font-family: sans-serif;
   margin: auto;
+  background-image: "mountains.jpeg";
 }
 
 header {
@@ -27,7 +28,32 @@ section.display {
   grid-template-columns: repeat(2, 400px);
   margin: auto;
   width: 65%;
-  padding: 10px;
+}
+
+.city {
+  margin: 15px auto;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+  grid-template-rows: repeat(4, 30px);
+  width: 150px;
+  margin: auto;
+}
+.description {
+  margin: auto;
+  width: auto;
+  padding: auto;
+}
+
+.region,
+.country,
+.area,
+.current {
+  margin: auto;
+  width: 150px;
+  padding: auto;
 }
 
 div.view-weather {
