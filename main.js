@@ -18,52 +18,52 @@ document.querySelector("#search-form").addEventListener("submit", (event) => {
         // .......CITY HEADER......
         const header2 = document.createElement("h2");
         header2.classList.add("city");
-        header2.textContent = getCity(weather);
+        header2.textContent = getCity(weather, "areaName");
         resultArea.prepend(header2);
 
         // ...........AREA..........
-        const areaHeader = document.createElement("h4");
-        areaHeader.textContent = `Area: `;
-        areaHeader.classList.add("description");
-        const areaParagraph = document.createElement("p");
-        areaParagraph.classList.add("area");
-        areaParagraph.textContent = getCity(weather);
+        addLocationLine("Area", "area", getCity(weather), location);
+        // const areaHeader = document.createElement("h4");
+        // areaHeader.textContent = `Area: `;
+        // areaHeader.classList.add("description");
+        // const areaParagraph = document.createElement("p");
+        // areaParagraph.classList.add("area");
+        // areaParagraph.textContent = getCity(weather);
+        // location.append(areaHeader);
+        // location.append(areaParagraph);
 
         // ...........REGION..........
-        const regionHeader = document.createElement("h4");
-        regionHeader.textContent = `Region: `;
-        regionHeader.classList.add("description");
-        const regionParagraph = document.createElement("p");
-        regionParagraph.classList.add("region");
-        regionParagraph.textContent = getRegion(weather);
+        addLocationLine("Region", "region", getRegion(weather), location);
+        // const regionHeader = document.createElement("h4");
+        // regionHeader.textContent = `Region: `;
+        // regionHeader.classList.add("description");
+        // const regionParagraph = document.createElement("p");
+        // regionParagraph.classList.add("region");
+        // regionParagraph.textContent = getRegion(weather);
+        // location.append(regionHeader);
+        // location.append(regionParagraph);
 
         // ...........COUNTRY..........
-        const countryHeader = document.createElement("h4");
-        countryHeader.textContent = `Country: `;
-        countryHeader.classList.add("description");
-        const countryParagraph = document.createElement("p");
-        countryParagraph.classList.add("country");
-        countryParagraph.textContent = getCountry(weather);
+        addLocationLine("Country", "country", getCountry(weather), location);
+        // const countryHeader = document.createElement("h4");
+        // countryHeader.textContent = `Country: `;
+        // countryHeader.classList.add("description");
+        // const countryParagraph = document.createElement("p");
+        // countryParagraph.classList.add("country");
+        // countryParagraph.textContent = getCountry(weather);
+        // location.append(countryHeader);
+        // location.append(countryParagraph);
 
         // ...........CURRENTLY..........
-        const currentHeader = document.createElement("h4");
-        currentHeader.textContent = `Currently: `;
-        currentHeader.classList.add("description");
-        const currentParagraph = document.createElement("p");
-        currentParagraph.classList.add("current");
-        currentParagraph.textContent = `Feels Like ${getCityTemp(weather)}°F`;
-
-        location.append(areaHeader);
-        location.append(areaParagraph);
-
-        location.append(regionHeader);
-        location.append(regionParagraph);
-
-        location.append(countryHeader);
-        location.append(countryParagraph);
-
-        location.append(currentHeader);
-        location.append(currentParagraph);
+        addLocationLine("Currently", "current", `Feels Like ${getCityTemp(weather)}°F`, location);
+        // const currentHeader = document.createElement("h4");
+        // currentHeader.textContent = `Currently: `;
+        // currentHeader.classList.add("description");
+        // const currentParagraph = document.createElement("p");
+        // currentParagraph.classList.add("current");
+        // currentParagraph.textContent = `Feels Like ${getCityTemp(weather)}°F`;
+        // location.append(currentHeader);
+        // location.append(currentParagraph);
 
         resultArea.append(location);
 
@@ -93,59 +93,28 @@ document.querySelector("#search-form").addEventListener("submit", (event) => {
         todayResult.classList.add("today");
 
         // today's average temperature
-        const todayAverageH = document.createElement("h4");
-        todayAverageH.textContent = "Average Temperature:";
-        todayResult.append(todayAverageH);
-        const todayAverageP = document.createElement("p");
-        todayAverageP.textContent = `${getTodayAverage(weather)}°F`;
-        todayResult.append(todayAverageP);
+        addTempLine("Average Temperature", getTodayAverage(weather), todayResult);
 
         // today's max temperature
-        const todayMaxH = document.createElement("h4");
-        todayMaxH.textContent = "Max Temperature:";
-        todayResult.append(todayMaxH);
-        const todayMaxP = document.createElement("p");
-        todayMaxP.textContent = `${getTodayMax(weather)}°F`;
-        todayResult.append(todayMaxP);
+        addTempLine("Max Temperature", getTodayMax(weather), todayResult);
 
         // today's minimum temperature
-        const todayMinH = document.createElement("h4");
-        todayMinH.textContent = "Min Temperature:";
-        todayResult.append(todayMinH);
-        const todayMinP = document.createElement("p");
-        todayMinP.textContent = `${getTodayMin(weather)}°F`;
-        todayResult.append(todayMinP);
-        //
+        addTempLine("Min Temperature", getTodayMin(weather), todayResult);
 
         //
-
+        //
         // ...........TOMORROW TEMPERATURE RESULT..........
         const tomorrowResult = document.createElement("div");
         tomorrowResult.classList.add("tomorrow");
 
         // tomorrow,s average temperature
-        const tomorrowAverageH = document.createElement("h4");
-        tomorrowAverageH.textContent = "Average Temperature:";
-        tomorrowResult.append(tomorrowAverageH);
-        const tomorrowAverageP = document.createElement("p");
-        tomorrowAverageP.textContent = `${getTomorrowAverage(weather)}°F`;
-        tomorrowResult.append(tomorrowAverageP);
+        addTempLine("Average Temperature", getTomorrowAverage(weather), tomorrowResult);
 
         // tomorrow's max temperature
-        const tomorrowMaxH = document.createElement("h4");
-        tomorrowMaxH.textContent = "Max Temperature:";
-        tomorrowResult.append(tomorrowMaxH);
-        const tomorrowMaxP = document.createElement("p");
-        tomorrowMaxP.textContent = `${getTomorrowMax(weather)}°F`;
-        tomorrowResult.append(tomorrowMaxP);
+        addTempLine("Max Temperature", getTomorrowMax(weather), tomorrowResult);
 
         // tomorrow's minimum temperature
-        const tomorrowMinH = document.createElement("h4");
-        tomorrowMinH.textContent = "Min Temperature:";
-        tomorrowResult.append(tomorrowMinH);
-        const tomorrowMinP = document.createElement("p");
-        tomorrowMinP.textContent = `${getTomorrowMin(weather)}°F`;
-        tomorrowResult.append(tomorrowMinP);
+        addTempLine("Min Temperature", getTomorrowMin(weather), tomorrowResult);
 
         //
         //
@@ -154,32 +123,35 @@ document.querySelector("#search-form").addEventListener("submit", (event) => {
         dayAfterResult.classList.add("dayAfter");
 
         // day after tomorrow average temperature
-        const dayAfterAverageH = document.createElement("h4");
-        dayAfterAverageH.textContent = "Average Temperature:";
-        dayAfterResult.append(dayAfterAverageH);
-        const dayAfterAverageP = document.createElement("p");
-        dayAfterAverageP.textContent = `${getDayAfterAverage(weather)}°F`;
-        dayAfterResult.append(dayAfterAverageP);
+        addTempLine("Average Temperature", getDayAfterAverage(weather), dayAfterResult);
 
         // day after tomorrow max temperature
-        const dayAfterMaxH = document.createElement("h4");
-        dayAfterMaxH.textContent = "Max Temperature:";
-        dayAfterResult.append(dayAfterMaxH);
-        const dayAfterMaxP = document.createElement("p");
-        dayAfterMaxP.textContent = `${getDayAfterMax(weather)}°F`;
-        dayAfterResult.append(dayAfterMaxP);
+        addTempLine("Max Temperature", getDayAfterMax(weather), dayAfterResult);
 
         // day after tomorrow minimum temperature
-        const dayAfterMinH = document.createElement("h4");
-        dayAfterMinH.textContent = "Min Temperature:";
-        dayAfterResult.append(dayAfterMinH);
-        const dayAfterMinP = document.createElement("p");
-        dayAfterMinP.textContent = `${getDayAfterMin(weather)}°F`;
-        dayAfterResult.append(dayAfterMinP);
+        addTempLine("Min Temperature", getDayAfterMin(weather), dayAfterResult);
 
         forecastResult.append(todayResult);
         forecastResult.append(tomorrowResult);
         forecastResult.append(dayAfterResult);
+        //
+        // ..........PREVIOUS SEARCHES SECTION...........
+        const previousResult = document.querySelector("ul");
+        const noResult = document.querySelector(".no-result");
+        if (noResult) {
+          noResult.remove();
+        }
+        const anchor = document.createElement("a");
+        anchor.setAttribute("href", `https://wttr.in/${getCity(weather)}`);
+        const list = document.createElement("li");
+        list.textContent = `${getCity(weather)} - ${getCityTemp(weather)}°F`;
+        anchor.append(list);
+        previousResult.append(anchor);
+        // const anchor2 = document.createElement("a");
+        // const temp = document.createElement("li");
+        // temp.textContent = `${getCityTemp(weather)}°F`;
+        // anchor2.append(temp);
+        // previousResult.append(anchor2);
       }
     })
     .catch();

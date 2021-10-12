@@ -11,15 +11,16 @@ main {
 header {
   border: 1px solid black;
   background-color: rgb(37, 128, 128);
-  width: 900px;
-  margin: auto 90px;
+  width: 75%;
+  margin: auto;
   height: 130px;
   border-radius: 20px;
 }
 
 div.view-weather {
-  padding-top: 5px;
-  margin-top: 10px;
+  padding: auto;
+  margin-top: 5%;
+  margin-left: 25%;
   width: 650px;
   border: 1px solid rgb(83, 160, 160);
 }
@@ -38,7 +39,7 @@ section.display {
   gap: 25px;
   grid-template-columns: repeat(2, 400px);
   margin: auto;
-  width: 65%;
+  width: 75;
 }
 
 .city {
@@ -55,25 +56,27 @@ section.display {
 
 .description,
 h4 {
-  margin: auto 0px;
+  margin: auto;
+
+  width: 97%;
 }
 
 .history h4 {
-  margin-top: 20px;
-  margin-left: 50px;
+  margin-top: 10%;
+  margin-left: 80%;
   width: 200px;
 }
 
 .no-result {
-  margin-left: 100px;
+  margin-left: 100%;
   width: 200px;
 }
 
-p.region,
-p.country,
-p.area,
-p.current {
-  margin: auto 20px;
+.region,
+.country,
+.area,
+.current {
+  margin: auto 35%;
   width: 200px;
   padding: auto 0px;
   text-align: left;
@@ -88,7 +91,8 @@ aside {
   display: grid;
   grid-template-columns: repeat(3, 220px);
 
-  width: 650px;
+  width: 165%;
+  margin-left: 20%;
 }
 
 h3 {
@@ -112,4 +116,9 @@ h3 {
 
 p {
   margin-top: 10px;
+}
+
+ul {
+  margin-left: 70%;
+  width: 90%;
 }

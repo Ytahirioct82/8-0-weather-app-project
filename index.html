@@ -6,28 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./scripts/main.js"></script>
+    <script defer src="/addTempLine.js"></script>
+    <script defer src="/getCity.js"></script>
+    <script defer src="/main.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Weather App</h1>
-    </header>
     <main>
-      <section>
+      <header>
+        <h1>Weather App</h1>
         <form id="search-form">
           <label>
-            Pick a Location
+            <span> Pick a Location </span>
             <input type="text" name="search" />
-            <input type="submit" name="search" value="Get Weather" />
+            <input type="submit" value="Get Weather" />
           </label>
         </form>
-      </section>
+      </header>
       <section class="display">
-        <p class="view-weather">Choose a location to view the weather</p>
-      </section>
-      <aside class="history">
-        <h4>Previous Searches</h4>
-      </aside>
+
+        <div class="view-weather">
+          <p class="result">Choose a location to view the weather.</p>
+        </div>
+
+        <aside class="history">
+          <h4>Previous Searches</h4>
+          <p class="no-result">No previous searches.</p>
+          <ul><ul>
+        </aside>
+
+        <div class="forecast">
+            
+         </div>
+
+    </section>
     </main>
   </body>
 </html>
