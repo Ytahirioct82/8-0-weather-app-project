@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="/previous.js"></script>
     <script defer src="/addTempLine.js"></script>
     <script defer src="/getCity.js"></script>
     <script defer src="/main.js"></script>
@@ -23,7 +24,6 @@
         </form>
       </header>
       <section class="display">
-
         <div class="view-weather">
           <p class="result">Choose a location to view the weather.</p>
         </div>
@@ -31,14 +31,14 @@
         <aside class="history">
           <h4>Previous Searches</h4>
           <p class="no-result">No previous searches.</p>
-          <ul><ul>
+          <div class="previous">
+            <ul></ul>
+            <span class="previous-temp"> </span>
+          </div>
         </aside>
 
-        <div class="forecast">
-            
-         </div>
-
-    </section>
+        <div class="forecast"></div>
+      </section>
     </main>
   </body>
 </html>

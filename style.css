@@ -119,6 +119,25 @@ p {
 }
 
 ul {
-  margin-left: 70%;
+  margin-left: 30%;
   width: 90%;
+}
+
+.previous {
+  display: grid;
+  grid-template-columns: repeat(2, 175px);
+  text-align: left;
+  border-radius: 20px;
+  width: 100%;
+  margin-left: 90px;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+.pre-p {
+  margin-left: 5px;
+  margin-top: 15px;
+  color: black;
 }

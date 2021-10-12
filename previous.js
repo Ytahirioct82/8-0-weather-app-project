@@ -1,8 +1,5 @@
-document.querySelector("#search-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  // target the category selection
-  const text = event.target.search.value;
+const getPreviousSearch = (userInput) => {
+  const text = userInput;
   const resultArea = document.querySelector(".view-weather");
 
   fetch(`https://wttr.in/${text}?format=j1`)
@@ -102,18 +99,6 @@ document.querySelector("#search-form").addEventListener("submit", (event) => {
         forecastResult.append(todayResult);
         forecastResult.append(tomorrowResult);
         forecastResult.append(dayAfterResult);
-        //
-        // ..........PREVIOUS SEARCHES SECTION...........
-
-        const noResult = document.querySelector(".no-result");
-        if (noResult) {
-          noResult.remove();
-        }
-        addPreviousSection(getCity(weather), getCityTemp(weather));
       }
-    })
-    .catch();
-
-  event.target.reset();
-  //   - ${getCityTemp(weather)}°F
-});
+    });
+};

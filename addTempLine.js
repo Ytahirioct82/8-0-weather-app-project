@@ -17,3 +17,22 @@ const addLocationLine = (label, addClass, result, target) => {
   target.append(node);
   target.append(ParagraphEl);
 };
+
+const addPreviousSection = (name, temp) => {
+  const previousResult = document.querySelector("ul");
+  const list = document.createElement("li");
+  list.textContent = name;
+  const anchor = document.createElement("a");
+  anchor.setAttribute("href", `#`);
+  anchor.append(list);
+  previousResult.append(anchor);
+  const tempResult = document.querySelector(".previous-temp");
+  const preTemp = document.createElement("p");
+  preTemp.classList.add("pre-p");
+  preTemp.textContent = `${temp}°F`;
+  tempResult.append(preTemp);
+  anchor.addEventListener("click", (event) => {
+    event.preventDefault();
+    getPreviousSearch(name);
+  });
+};
